@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Popstar</title>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/grid_color.css">
+    <link rel="stylesheet" href="css/position.css">
+</head>
+<body>
+    <div id="id-content">
+        <h1>Popstar</h1>
+        <div id="id-main">
+            <div id="id-info">
+                <div id="id-info-stage">0</div>
+                <div id="id-info-score">0</div>
+                <div id="id-info-target">500</div>
+            </div>
+            <div id="id-game">
+                <div id="id-message"></div>
+                <div id="id-grid"></div>
+                <div id="id-map"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const __main = function() {
+            let game = Game.instance()
+        }
+
+        __main()
+    </script>
+</body>
+</html>

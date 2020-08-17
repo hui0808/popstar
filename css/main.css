@@ -1,0 +1,196 @@
+.cell {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #d0bfb6;
+    margin-right: 2px;
+    border-radius: 3px;
+}
+
+.cell:last-child {
+    margin-right: 0px;
+}
+
+#id-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+}
+
+#id-main {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
+
+#id-info {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: beige;
+    width: 518px;
+    border-width: 6px 6px 0 6px;
+    border-color: #bbada0;
+    border-style: solid;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+#id-info-stage, #id-info-target, #id-info-score {
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 71px;
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    color: cadetblue;
+}
+
+#id-info-stage:after, #id-info-target:after, #id-info-score:after {
+    text-align: center;
+    position: absolute;
+    top: 5px;
+    left: 18px;
+    line-height: 18px;
+    color: olive;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+#id-info-stage:after {
+    content: "STAGE";
+}
+
+#id-info-target:after {
+    content: "TARGET";
+    left: 11px;
+}
+
+#id-info-score:after {
+    content: "SCORE";
+}
+
+#id-console {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+}
+
+#id-map {
+    display: inline-flex;
+    flex-direction: column;
+    height: max-content;
+    width: max-content;
+}
+
+#id-game {
+    padding: 0 6px 6px 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    width: 518px;
+    height: 518px;
+    background: #bbada0;
+    position: relative;
+    user-select: none;
+}
+
+#id-grid {
+    position: absolute;
+    display: inline;
+    z-index: 2;
+}
+
+.row {
+    display: inline-flex;
+    margin-bottom: 2px;
+}
+
+.row:last-child {
+    margin-bottom: 0px;
+}
+
+.grid {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+    transition: transform 100ms ease-in-out;
+    background-image: url("../star.png");
+    background-position: 25% 30%;
+}
+
+.star-highlight {
+    width: 47px;
+    height: 47px;
+    border: 2px #eeeeee solid;
+}
+
+.star-remove {
+    opacity: 0;
+    transition: opacity 250ms;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.message-show {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 518px;
+    height: 518px;
+    background-color: rgba(187, 173, 160, 0.7);
+    animation: appear 3000ms ease backwards;
+    z-index: 100;
+}
+
+#id-message p{
+    font-size: 50px;
+    color: rgb(119, 110, 101);
+}
+
+#id-message div {
+    font-size: 20px;
+    width: 115px;
+    height: 60px;
+    text-align: center;
+    line-height: 57px;
+    background-color: rgb(119, 110, 101);
+    color: #eeeeee;
+    border-radius: 6px;
+}
+
+@keyframes fade {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+    100% {
+        top: -40px;
+        opacity: 0;
+    }
+}
+
+.score-addition {
+    position: absolute;
+    left: 70px;
+    font-size: 13px;
+    animation: fade 600ms ease-in;
+}
