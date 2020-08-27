@@ -78,9 +78,15 @@ const clonedSquare = function(array) {
     return clone
 }
 
+const imageFromPath = function(path) {
+    let img = new Image()
+    img.src = path
+    return img
+}
+
 function ranint(n, m) {
-    let r = Math.floor(Math.random() * (m - n) + n);
-    return r;
+    let r = Math.floor(Math.random() * (m - n) + n)
+    return r
 }
 
 const zeros = function(x, y) {

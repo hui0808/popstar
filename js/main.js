@@ -4,9 +4,7 @@ class GameObject {
     }
 
     static new(...args) {
-        let i = new this(...args)
-        // i.main = this.main
-        return i
+        return new this(...args)
     }
 
     init() {
@@ -36,7 +34,8 @@ class Game extends GameObject {
         this.fps = 30
         this.scene = null
         this.pause = false
-        this.runWithScene(NextStage)
+        this.images = images
+        this.preload(() => this.runWithScene(NextStage))
     }
 
     static instance(...args) {
@@ -71,6 +70,26 @@ class Game extends GameObject {
         let s = scene.new(this, callback)
         this.scene = s
         this.pause = false
+    }
+
+    preload(callback) {
+        let loads = 0
+        let names = Object.keys(this.images)
+        log('images', this.images)
+        if (names.length === 0) callback && callback()
+        for (let key of names) {
+            let path = this.images[key]
+            let img = imageFromPath(path)
+            img.onload = () => {
+                log(img)
+                this.images[key] = img
+                loads++
+                if (loads === names.length) {
+                    log('load images', this.images)
+                    callback && callback()
+                }
+            }
+        }
     }
 }
 
