@@ -1,5 +1,5 @@
 # popstar
-该游戏使用**原生 JavaScript** 的 **ECMAScript 6** 语法标准开发的游戏框架 **JSGame** 完成
+该游戏使用**原生 JavaScript** 的 **ECMAScript 6** 语法标准开发的游戏框架 [**JSGame**](https://github.com/hui0808/JSGame) 完成
 
 JSGame 的**核心原理**是通过**定时器**定义一个**游戏帧率**，在每一帧里都会依次执行 **debug**、 **update** 和 **draw** 这些生命周期函数，销毁时调用 **destroy**，这样不用每次手动去更新和绘制视图页面，**将逻辑和视图分离出来**。
 
